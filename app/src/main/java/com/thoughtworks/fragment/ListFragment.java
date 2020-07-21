@@ -52,5 +52,14 @@ public class ListFragment extends Fragment {
         TextView detailTextView = getActivity().findViewById(R.id.detail);
         detailTextView.setText(detail);
         transaction.commit();
+        if (getView() != null) {
+            if (detail == R.string.android_detail) {
+                getView().findViewById(R.id.android_btn).setBackground(getResources().getDrawable(R.drawable.btn_selected));
+                getView().findViewById(R.id.java_btn).setBackground(null);
+            } else {
+                getView().findViewById(R.id.java_btn).setBackground(getResources().getDrawable(R.drawable.btn_selected));
+                getView().findViewById(R.id.android_btn).setBackground(null);            }
+        }
+
     }
 }
