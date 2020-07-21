@@ -29,15 +29,7 @@ public class ListFragment extends Fragment {
         androidBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DetailFragment detailFragment = new DetailFragment();
-                if (getActivity() == null) {
-                    return;
-                }
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.add(R.id.detail_container, detailFragment);
-                TextView detailTextView = getActivity().findViewById(R.id.detail);
-                detailTextView.setText(R.string.android_detail);
-                transaction.commit();
+                click(R.string.android_detail);
             }
         });
 
@@ -45,16 +37,20 @@ public class ListFragment extends Fragment {
         javaBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DetailFragment detailFragment = new DetailFragment();
-                if (getActivity() == null) {
-                    return;
-                }
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.add(R.id.detail_container, detailFragment);
-                TextView detailTextView = getActivity().findViewById(R.id.detail);
-                detailTextView.setText(R.string.java_detail);
-                transaction.commit();
+                click(R.string.java_detail);
             }
         });
+    }
+
+    private void click(int detail) {
+        if (getActivity() == null) {
+            return;
+        }
+        DetailFragment detailFragment = new DetailFragment();
+        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.detail_container, detailFragment);
+        TextView detailTextView = getActivity().findViewById(R.id.detail);
+        detailTextView.setText(detail);
+        transaction.commit();
     }
 }
