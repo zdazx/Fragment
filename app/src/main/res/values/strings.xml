@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">切换Fragment</string>
+    <string name="android_text">Android</string>
+    <string name="java_text">Java</string>
+    <string name="android_detail">Android是一个移动端操作系统。可以使用Java、Kotlin，C/C++语言进行开发</string>
+    <string name="java_detail">一个新的Fragment</string>
 </resources>
